@@ -2,17 +2,14 @@ import React from "react";
 
 
 export class VectorInput extends React.Component<VectorInputProps> {
-    createInput(dimensionIndex: number): JSX.Element | null {
+    createInput(dimensionIndex: number) {
         switch (dimensionIndex) {
             case 0:
-                return <input type="number" step="1" min="0" max="65536" placeholder={this.props.xHint}>
-                </input>;
+                return <input type="number" step="1" min="0" max="65536" placeholder={this.props.xHint}/>;
             case 1:
-                return <input type="number" step="1" min="0" max="65536" placeholder={this.props.yHint}>
-                </input>;
+                return <input type="number" step="1" min="0" max="65536" placeholder={this.props.yHint}/>
             case 2:
-                return <input type="number" step="1" min="0" max="65536" placeholder={this.props.zHint}>
-                </input>;
+                return <input type="number" step="1" min="0" max="65536" placeholder={this.props.zHint}/>;
         }
 
         return null;
