@@ -34,48 +34,58 @@ export class Calculator extends React.Component {
             result: "",
         };
 
+    static computeScalar(
+        input: number,
+        kernel: number,
+        padding: number,
+        stride: number
+    ) {
+        return Math.ceil((input - kernel + 2 * padding) / stride + 1);
+    }
     compute() {
         if (this.state.is3d) {
-            const x =
-                Math.floor(
-                    this.state.input_size.x -
-                    this.state.kernel_size.x +
-                    2 * this.state.padding.x
-                ) / this.state.stride.x;
+            const x = Calculator.computeScalar(
+                this.state.input_size.x,
+                this.state.kernel_size.x,
+                this.state.padding.x,
+                this.state.stride.x
+            );
 
             if (x.toString() == "NaN") return;
-            const y =
-                Math.floor(
-                    this.state.input_size.y -
-                    this.state.kernel_size.y +
-                    2 * this.state.padding.y
-                ) / this.state.stride.y;
+            const y = Calculator.computeScalar(
+                this.state.input_size.y,
+                this.state.kernel_size.y,
+                this.state.padding.y,
+                this.state.stride.y
+            );
 
             if (y.toString() == "NaN") return;
-            const z =
-                Math.floor(
-                    this.state.input_size.z -
-                    this.state.kernel_size.z +
-                    2 * this.state.padding.z
-                ) / this.state.stride.z;
+            const z = Calculator.computeScalar(
+                this.state.input_size.z,
+                this.state.kernel_size.z,
+                this.state.padding.z,
+                this.state.stride.z
+            );
 
             if (z.toString() == "NaN") return;
             this.state.result = `${x}\xd7${y}\xd7${z}`;
         } else {
             const x =
-                Math.floor(
-                    this.state.input_size.x -
-                    this.state.kernel_size.x +
-                    2 * this.state.padding.x
-                ) / this.state.stride.x;
+                Calculator.computeScalar(
+                    this.state.input_size.x,
+                    this.state.kernel_size.x,
+                    this.state.padding.x,
+                    this.state.stride.x
+                );
 
             if (x.toString() == "NaN") return;
             const y =
-                Math.floor(
-                    this.state.input_size.y -
-                    this.state.kernel_size.y +
-                    2 * this.state.padding.y
-                ) / this.state.stride.y;
+                Calculator.computeScalar(
+                    this.state.input_size.y,
+                    this.state.kernel_size.y,
+                    this.state.padding.y,
+                    this.state.stride.y
+                );
 
             if (y.toString() == "NaN") return;
             this.state.result = `${x}\xd7${y}`;
