@@ -1,0 +1,18 @@
+body {
+    color-scheme: dark;
+    background-color: #0F0F0F;
+    color: white;
+
+    font-family: 'Roboto',  'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="number"] {
+    padding: 8px;
+    text-align: right;
+    width: 140px;
+    border-color: transparent;
+    border-radius: 8px;
+    margin: 2px;
+    font-family: 'JetBrains Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace;
+    font-size: 11pt;
+}
