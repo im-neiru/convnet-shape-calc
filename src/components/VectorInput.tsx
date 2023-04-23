@@ -39,10 +39,10 @@ export class VectorInput extends React.Component<VectorInputProps> {
                         this.state.y != undefined &&
                         (this.props.threeDimension == false ? true : (this.state.z != undefined))
                     ) {
+                        this.setState(this.state);
                         this.props.doProcess(this.state.x, this.state.y, this.state.z);
                     }
 
-                    this.setState(this.state);
                     return;
                 }
             } catch (_e) {
