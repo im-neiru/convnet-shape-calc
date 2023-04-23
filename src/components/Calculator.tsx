@@ -97,26 +97,28 @@ export class Calculator extends React.Component {
     render() {
         return (
             <div>
-                <label>Conv2d</label>
-                <input
-                    type="radio"
-                    checked={!this.state.is3d}
-                    onChange={(_ev) => {
-                        this.state.is3d = false;
+                <div className="radio-container">
+                    <label>Conv2D</label>
+                    <input
+                        type="radio"
+                        checked={!this.state.is3d}
+                        onChange={(_ev) => {
+                            this.state.is3d = false;
 
-                        this.setState(this.state);
-                    }}
-                />
-                <label>Conv3d</label>
-                <input
-                    type="radio"
-                    checked={this.state.is3d}
-                    onChange={(_ev) => {
-                        this.state.is3d = true;
+                            this.setState(this.state);
+                        }}
+                    />
+                    <label>Conv3D</label>
+                    <input
+                        type="radio"
+                        checked={this.state.is3d}
+                        onChange={(_ev) => {
+                            this.state.is3d = true;
 
-                        this.setState(this.state);
-                    }}
-                />
+                            this.setState(this.state);
+                        }}
+                    />
+                </div>
                 <VectorInput
                     label="Input Size: "
                     xHint="Input Width"
@@ -162,7 +164,7 @@ export class Calculator extends React.Component {
                         this.compute();
                     }}
                 ></VectorInput>
-                <label>{this.state.result.length > 0 ? "Output Shape: " : ""}</label>
+                <label className="par">{this.state.result.length > 0 ? "Output Shape: " : ""}</label>
                 <p>{this.state.result}</p>
             </div>
         );

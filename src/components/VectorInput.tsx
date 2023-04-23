@@ -107,7 +107,7 @@ export class VectorInput extends React.Component<VectorInputProps> {
     }
 
     render() {
-        const label = <label> {this.props.label} </label>;
+        const label = <label className="param-label"> {this.props.label} </label>;
 
         if (this.props.threeDimension) {
             const xInput = this.createInput(0);
@@ -115,10 +115,13 @@ export class VectorInput extends React.Component<VectorInputProps> {
             const zInput = this.createInput(2);
 
             return (
-                <div>
+                <div className="vector-container">
                     {label}
+                    <span></span>
                     {xInput}
+                    <span></span>
                     {yInput}
+                    <span></span>
                     {zInput}
                     <div className="error-message">{this.state.error}</div>
                 </div>
@@ -128,8 +131,9 @@ export class VectorInput extends React.Component<VectorInputProps> {
             const yInput = this.createInput(1);
 
             return (
-                <div>
-                    {label} {xInput} {yInput}
+                <div className="vector-container">
+                    {label}<span></span>{xInput}<span></span>{yInput}
+
                     <div className="error-message">{this.state.error}</div>
                 </div>
             );

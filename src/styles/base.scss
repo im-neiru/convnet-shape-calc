@@ -1,18 +1,50 @@
 body {
-    color-scheme: dark;
-    background-color: #0F0F0F;
-    color: white;
+  color-scheme: dark;
+  background-color: #0f0f0f;
+  color: white;
 
-    font-family: 'Roboto',  'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", "Ubuntu", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+}
+
+div#app-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 80%;
+
+  transform: translate(-50%, -50%);
+}
+
+div.radio-container {
+  margin: 20px;
+}
+
+div.vector-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px;
+}
+
+div.vector-container > span {
+  flex-basis: 1%;
+}
+
+div.vector-container > label.param-label {
+  flex-basis: 20%;
+  padding: 8px;
+  width: 120px;
 }
 
 input[type="number"] {
-    padding: 8px;
-    text-align: right;
-    width: 140px;
-    border-color: transparent;
-    border-radius: 8px;
-    margin: 2px;
-    font-family: 'JetBrains Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace;
-    font-size: 11pt;
+  padding: 8px;
+  text-align: right;
+  width: 140px;
+  flex-basis: 30%;
+  border-color: transparent;
+  border-radius: 8px;
+  margin: 2px;
+  font-family: "JetBrains Mono", "Ubuntu Mono", "Courier New", Courier,
+    monospace;
+  font-size: 11pt;
 }
