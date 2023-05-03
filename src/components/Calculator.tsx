@@ -150,6 +150,7 @@ export class Calculator extends React.Component {
                     threeDimension={this.state.is3d}
                     doProcess={(x, y, z) => {
                         this.state.kernel_size = { x: x, y: y, z: z };
+                        this.compute();
                     }}
                 ></VectorInput>
                 <VectorInput
