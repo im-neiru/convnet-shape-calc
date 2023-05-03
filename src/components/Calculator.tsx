@@ -40,7 +40,7 @@ export class Calculator extends React.Component {
         padding: number,
         stride: number
     ) {
-        return Math.ceil((input - kernel + 2 * padding) / stride + 1);
+        return Math.floor((input - kernel + 2 * padding) / stride + 1);
     }
     compute() {
         if (this.state.is3d) {
